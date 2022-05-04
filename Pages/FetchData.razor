@@ -9,12 +9,21 @@
 
 <p>This component demonstrates fetching data from a service.</p>
 
+@*
+    Si la variable "forecasts" está vacía,
+    se mostrará el siguiente texto.
+*@
+
 @if (forecasts == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
+    @*
+        Se establecen los nombres que tendrán las columnas.
+    *@
+
     <table class="table">
         <thead>
             <tr>
@@ -25,6 +34,11 @@ else
             </tr>
         </thead>
         <tbody>
+
+            @*
+                Contenido de las columnas: proviene de "WeatherForecastService".
+            *@
+
             @foreach (var forecast in forecasts)
             {
                 <tr>
@@ -37,6 +51,11 @@ else
         </tbody>
     </table>
 }
+
+@*
+    Se declara la variable "forecasts".
+    Dicha variable, recoge la fecha actual.
+*@
 
 @code {
     private WeatherForecast[]? forecasts;

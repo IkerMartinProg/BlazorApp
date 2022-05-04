@@ -8,6 +8,11 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+@*
+    @currentCount --> variable que sirve como contador
+    @onclick="IncrementCount" --> ejecuta el método "IncrementCount"
+*@
+
 @code {
     private int currentCount = 0;
 
@@ -19,3 +24,14 @@
         currentCount += IncrementAmount;
     }
 }
+
+@*
+    Variables declaradas:
+        -currentCount (valor inicial)
+        -IncrementAmount (cantidad del incremento)
+    
+    Método:
+        -IncrementCount: aumenta el contador en 1.
+        currentCount = currentCount + IncrementAmount;
+        currentCount += IncrementAmount;
+*@
